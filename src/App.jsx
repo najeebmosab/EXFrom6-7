@@ -24,6 +24,8 @@ function App(props) {
     setSelectedColor(color);
   }
   const colors = ['blue', 'red', 'yellow'];
+  const [checkboxes, setCheckboxes] = useState([false, false, true, true]);
+
   return (
     <div>
       <Button val={num}></Button>
@@ -45,6 +47,27 @@ function App(props) {
           <ColorButton key={color} color={color} onClick={handleButtonClick} />
         ))}
         <p>You selected: {selectedColor}</p>
+      </div>
+      <div>
+        <form action="">
+          <div>
+            <input onClick={function () {setCheckboxes(!checkboxes[0])}} type="checkbox" checked={checkboxes[0]} />
+            <label htmlFor="">I read</label>
+          </div>
+          <div>
+            <input onClick={function () {setCheckboxes(!checkboxes[1])}} type="checkbox" checked={checkboxes[1]} />
+            <label htmlFor="">I accept</label>
+          </div>
+          <div>
+            <input type="checkbox" onClick={function () {setCheckboxes(!checkboxes[2])}} checked={checkboxes[2]} />
+          <label htmlFor="">I want to get the weekly</label>
+          </div>
+          <div>
+            <input type="checkbox" onClick={function () {setCheckboxes(!checkboxes[3])}} checked={checkboxes[3]} />
+            <label htmlFor="">I want to get sales</label>
+          </div>
+
+        </form>
       </div>
     </div>)
 
